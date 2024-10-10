@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LiuSir的AIGC/AI绘画频道，分享最新的AI绘画工作流、资料和参考图片。">
-    <title>LiuSir的AIGC/AI绘画频道</title>
+    <meta name="description" content="免费下载LiuSir的AI绘画工作流，帮助你快速上手AI创作。">
+    <title>免费下载工作流 - LiuSir的AIGC/AI绘画频道</title>
+    <link rel="stylesheet" href="./assets/style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,39 +24,63 @@
             font-size: 2.5em;
             margin: 0;
         }
-        p {
-            font-size: 1.2em;
-            margin: 20px 0;
-        }
         main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 70vh;
+            padding: 20px;
             text-align: center;
         }
-        .content {
+        .workflow-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             max-width: 800px;
-            padding: 20px;
+            margin: 0 auto;
+        }
+        .workflow-item {
+            padding: 15px;
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
-        a {
-            text-decoration: none;
-            color: #4CAF50;
-            font-weight: bold;
-            font-size: 1.2em;
+        .workflow-item h2 {
+            margin: 0;
+        }
+        .workflow-item p {
+            margin: 10px 0;
+        }
+        .download-btn {
             display: inline-block;
-            margin-top: 20px;
             padding: 10px 20px;
-            border: 2px solid #4CAF50;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        a:hover {
             background-color: #4CAF50;
             color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+        /* 新增图片展示部分 */
+        .image-gallery {
+            margin-top: 40px;
+        }
+        .image-gallery h2 {
+            font-size: 2em;
+            color: #333;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+        .grid-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .grid-container img:hover {
+            transform: scale(1.05);
         }
         footer {
             text-align: center;
@@ -71,18 +96,38 @@
 <body>
 
 <header>
-    <h1>欢迎来到LiuSir的AIGC/AI绘画频道</h1>
+    <h1>免费下载AI绘画工作流</h1>
 </header>
 
 <main>
-    <div class="content">
-        <p>这里是分享最新的AI绘画工作流、资料、以及精彩的AI创意作品的地方。我们将通过AIGC技术探索艺术创作的无限可能。</p>
-        <p>请持续关注并加入我们的创作社区，获取独家会员内容和最新的AI绘画资讯！</p>
+    <div class="workflow-list">
+        <!-- 原有的工作流展示代码保持不变 -->
+        <!-- ... -->
+    </div>
 
-        <!-- 免费工作流下载链接 -->
-        <a href="./free_workflow/index.html" target="_blank">免费下载工作流</a>
-        <!-- 会员专享内容链接 -->
-        <a href="premium_content_link" target="_blank">会员专享内容</a>
+    <!-- 新增图片展示部分 -->
+    <div class="image-gallery">
+        <h2>室内效果图展示</h2>
+        <div class="grid-container">
+            <img src="xiaogt/ComfyUI_00236_.png" alt="室内效果图1">
+            <img src="xiaogt/ComfyUI_00244_.png" alt="室内效果图2">
+            <img src="xiaogt/ComfyUI_00256_.png" alt="室内效果图3">
+            <img src="xiaogt/ComfyUI_00289_.png" alt="室内效果图4">
+            <img src="xiaogt/ComfyUI_00306_.png" alt="室内效果图5">
+            <img src="xiaogt/ComfyUI_00315_.png" alt="室内效果图6">
+            <img src="xiaogt/ComfyUI_00325_.png" alt="室内效果图7">
+            <img src="xiaogt/ComfyUI_00328_.png" alt="室内效果图8">
+            <img src="xiaogt/ComfyUI_00337_.png" alt="室内效果图9">
+            <img src="xiaogt/ComfyUI_00342_.png" alt="室内效果图10">
+            <img src="xiaogt/ComfyUI_00398_.png" alt="室内效果图11">
+            <img src="xiaogt/ComfyUI_00401_.png" alt="室内效果图12">
+            <img src="xiaogt/ComfyUI_00408_.png" alt="室内效果图13">
+            <img src="xiaogt/ComfyUI_00413_.png" alt="室内效果图14">
+            <img src="xiaogt/ComfyUI_00415_.png" alt="室内效果图15">
+            <img src="xiaogt/ComfyUI_00419_.png" alt="室内效果图16">
+            <img src="xiaogt/ComfyUI_00422_.png" alt="室内效果图17">
+            <img src="xiaogt/ComfyUI_00425_.png" alt="室内效果图18">
+        </div>
     </div>
 </main>
 
