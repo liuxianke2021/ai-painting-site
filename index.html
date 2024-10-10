@@ -59,7 +59,7 @@
         }
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(6, 1fr); /* 6列布局 */
+            grid-template-columns: repeat(6, 1fr); /* 每行显示6张图片 */
             gap: 10px;
             padding: 10px;
         }
@@ -78,7 +78,6 @@
             display: none;
             position: fixed;
             z-index: 1000;
-            padding-top: 60px;
             left: 0;
             top: 0;
             width: 100%;
@@ -87,14 +86,13 @@
             overflow: hidden;
         }
         .modal-content {
-            position: absolute;
             max-width: 100%;
             max-height: 100%;
             margin: auto;
-            transform: translate(-50%, -50%);
+            position: absolute;
             top: 50%;
             left: 50%;
-            cursor: grab;
+            transform: translate(-50%, -50%);
         }
         .close, .prev, .next {
             position: absolute;
@@ -144,13 +142,25 @@
     <div class="image-gallery">
         <h2>AI绘画之室内效果图展示</h2>
         <div class="grid-container">
-            <!-- 确保完整展示18张图片 -->
+            <!-- 完整的18张室内效果图 -->
             <img src="xiaogt/ComfyUI_00236_.png" alt="室内效果图1" class="gallery-img">
             <img src="xiaogt/ComfyUI_00244_.png" alt="室内效果图2" class="gallery-img">
             <img src="xiaogt/ComfyUI_00256_.png" alt="室内效果图3" class="gallery-img">
             <img src="xiaogt/ComfyUI_00289_.png" alt="室内效果图4" class="gallery-img">
             <img src="xiaogt/ComfyUI_00306_.png" alt="室内效果图5" class="gallery-img">
-            <!-- ...完整的18张室内效果图展示 -->
+            <img src="xiaogt/ComfyUI_00315_.png" alt="室内效果图6" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00325_.png" alt="室内效果图7" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00328_.png" alt="室内效果图8" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00337_.png" alt="室内效果图9" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00342_.png" alt="室内效果图10" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00398_.png" alt="室内效果图11" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00401_.png" alt="室内效果图12" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00408_.png" alt="室内效果图13" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00413_.png" alt="室内效果图14" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00415_.png" alt="室内效果图15" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00419_.png" alt="室内效果图16" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00422_.png" alt="室内效果图17" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00425_.png" alt="室内效果图18" class="gallery-img">
         </div>
     </div>
 
@@ -158,11 +168,25 @@
     <div class="image-gallery">
         <h2>Ai-girls001</h2>
         <div class="grid-container">
-            <!-- 确保完整展示18张图片 -->
+            <!-- 完整的18张Ai-girls001图片 -->
             <img src="girls01/ComfyUI_00282_.png" alt="Ai-girls001 图片1" class="gallery-img">
             <img src="girls01/ComfyUI_00283_.png" alt="Ai-girls001 图片2" class="gallery-img">
             <img src="girls01/ComfyUI_00284_.png" alt="Ai-girls001 图片3" class="gallery-img">
-            <!-- ...完整的18张Ai-girls001图片展示 -->
+            <img src="girls01/ComfyUI_00285_.png" alt="Ai-girls001 图片4" class="gallery-img">
+            <img src="girls01/ComfyUI_00286_.png" alt="Ai-girls001 图片5" class="gallery-img">
+            <img src="girls01/ComfyUI_00287_.png" alt="Ai-girls001 图片6" class="gallery-img">
+            <img src="girls01/ComfyUI_00288_.png" alt="Ai-girls001 图片7" class="gallery-img">
+            <img src="girls01/ComfyUI_00289_.png" alt="Ai-girls001 图片8" class="gallery-img">
+            <img src="girls01/ComfyUI_00290_.png" alt="Ai-girls001 图片9" class="gallery-img">
+            <img src="girls01/ComfyUI_00291_.png" alt="Ai-girls001 图片10" class="gallery-img">
+            <img src="girls01/ComfyUI_00292_.png" alt="Ai-girls001 图片11" class="gallery-img">
+            <img src="girls01/ComfyUI_00293_.png" alt="Ai-girls001 图片12" class="gallery-img">
+            <img src="girls01/ComfyUI_00294_.png" alt="Ai-girls001 图片13" class="gallery-img">
+            <img src="girls01/ComfyUI_00295_.png" alt="Ai-girls001 图片14" class="gallery-img">
+            <img src="girls01/ComfyUI_00306_.png" alt="Ai-girls001 图片15" class="gallery-img">
+            <img src="girls01/ComfyUI_00307_.png" alt="Ai-girls001 图片16" class="gallery-img">
+            <img src="girls01/ComfyUI_00308_.png" alt="Ai-girls001 图片17" class="gallery-img">
+            <img src="girls01/ComfyUI_00317_.png" alt="Ai-girls001 图片18" class="gallery-img">
         </div>
     </div>
 
@@ -188,8 +212,6 @@
 
     var images = [];
     var currentIndex = 0;
-    var currentScale = 1; // 初始化缩放比例
-    var isDragging = false, startX, startY;
 
     // 收集所有图片的路径到 images 数组
     var galleryImages = document.getElementsByClassName("gallery-img");
@@ -206,13 +228,14 @@
     function openModal(index) {
         modal.style.display = "block";
         modalImg.src = images[index];
-        resetModal(); // 打开新图片时重置缩放与位置
+        modalImg.style.maxWidth = "100%";
+        modalImg.style.maxHeight = "100%";
+        modalImg.style.margin = "auto";
     }
 
     // 关闭弹窗
     closeBtn.onclick = function() {
         modal.style.display = "none";
-        resetModal(); // 关闭时重置
     }
 
     // 下一张图片
@@ -225,29 +248,6 @@
     prevBtn.onclick = function() {
         currentIndex = (currentIndex - 1 + images.length) % images.length; // 无限循环
         openModal(currentIndex);
-    }
-
-    // 鼠标滚轮缩放功能
-    modalImg.addEventListener('wheel', function(e) {
-        e.preventDefault();
-        var scaleChange = e.deltaY * -0.01; // 根据滚轮移动计算缩放
-        currentScale = Math.min(Math.max(currentScale + scaleChange, 0.5), 3); // 限制缩放范围在 0.5x 到 3x 之间
-
-        // 根据鼠标位置进行缩放
-        const rect = modalImg.getBoundingClientRect();
-        const offsetX = (e.clientX - rect.left) / rect.width;
-        const offsetY = (e.clientY - rect.top) / rect.height;
-
-        modalImg.style.transformOrigin = `${offsetX * 100}% ${offsetY * 100}%`;
-        modalImg.style.transform = `scale(${currentScale})`;
-    });
-
-    // 移除拖拽功能，只允许滚轮缩放
-    function resetModal() {
-        currentScale = 1; // 重置缩放
-        modalImg.style.transform = `scale(1)`;
-        modalImg.style.left = "50%";
-        modalImg.style.top = "50%";
     }
 </script>
 
