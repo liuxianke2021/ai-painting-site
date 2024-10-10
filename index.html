@@ -59,7 +59,7 @@
         .download-btn:hover {
             background-color: #45a049;
         }
-        /* 新增图片展示部分 */
+        /* 图片展示部分 */
         .image-gallery {
             margin-top: 40px;
         }
@@ -87,8 +87,7 @@
             padding: 10px;
             background-color: #333;
             color: white;
-            position: absolute;
-            bottom: 0;
+            position: relative; /* 设置为相对定位，确保 footer 不覆盖内容 */
             width: 100%;
         }
     </style>
@@ -100,12 +99,34 @@
 </header>
 
 <main>
+    <!-- 恢复的工作流展示内容 -->
     <div class="workflow-list">
-        <!-- 原有的工作流展示代码保持不变 -->
-        <!-- ... -->
+        <div class="workflow-item">
+            <h2>A1-BizyAir云端模型和运算高清放大工作流V2</h2>
+            <p>通过云端模型和高清放大技术，优化图像质量并提升运算效率。</p>
+            <a href="./A1-BizyAir云端模型和运算高清放大工作流V2.json" class="download-btn" download>下载工作流</a>
+        </div>
+
+        <div class="workflow-item">
+            <h2>Hyper加速+Flux黑森林模型+SD加速放大最新优化图生图工作流</h2>
+            <p>适用于图像生成优化和加速场景，结合了Hyper加速与Flux黑森林模型，提供图生图的最新优化方案。</p>
+            <a href="./Hyper_Flux_SD.json" class="download-btn" download>下载工作流</a>
+        </div>
+
+        <div class="workflow-item">
+            <h2>国产可图模型kolors+IPAdapter+CN 图像控制工作流</h2>
+            <p>使用国产可图模型与IPAdapter技术，精确控制生成图像的风格和内容。</p>
+            <a href="./kolors_IPAdapter_CN.json" class="download-btn" download>下载工作流</a>
+        </div>
+
+        <div class="workflow-item">
+            <h2>超强视觉识别提示词反推Min2.6+joy+Florence2工作流</h2>
+            <p>多视觉模型组合工作流，适用于复杂的提示词生成和视觉识别任务。</p>
+            <a href="./Min2.6_joy_Florence2工作流.json" class="download-btn" download>下载工作流</a>
+        </div>
     </div>
 
-    <!-- 新增图片展示部分 -->
+    <!-- 图片展示部分 -->
     <div class="image-gallery">
         <h2>室内效果图展示</h2>
         <div class="grid-container">
