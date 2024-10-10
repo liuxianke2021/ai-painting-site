@@ -74,6 +74,7 @@
         .grid-container img:hover {
             transform: scale(1.05);
         }
+        /* 弹窗 Modal 样式 */
         .modal {
             display: none;
             position: fixed;
@@ -88,8 +89,8 @@
         .modal-content {
             margin: auto;
             display: block;
-            width: 80%;
-            max-width: 700px;
+            width: 90%; /* 放大图片尺寸 */
+            max-width: 1400px; /* 最大宽度调整为1400px，放大效果更明显 */
         }
         .close {
             position: absolute;
@@ -99,6 +100,15 @@
             font-size: 40px;
             font-weight: bold;
             cursor: pointer;
+        }
+        /* 底部版权信息居中 */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: relative;
+            width: 100%;
         }
     </style>
 </head>
@@ -112,7 +122,7 @@
     <div class="content">
         <p>这里是分享最新的AI绘画工作流、资料，以及精美的AI创意作品的地方。我们将通过AIGC技术探索艺术创作的无限可能。</p>
         <p>请持续关注并加入我们的创作社区，获取独家会员内容和最新的AI绘画资讯！</p>
-        <!-- 修正后的链接，采用相对路径 -->
+        <!-- 使用相对路径链接 -->
         <a href="./free_workflow/index.html" target="_blank">免费下载工作流</a>
         <a href="premium_content_link" target="_blank">会员专享内容</a>
     </div>
@@ -121,13 +131,25 @@
     <div class="image-gallery">
         <h2>室内效果图展示</h2>
         <div class="grid-container">
+            <!-- 继续加载更多的图片 -->
             <img src="xiaogt/ComfyUI_00236_.png" alt="室内效果图1" class="gallery-img">
             <img src="xiaogt/ComfyUI_00244_.png" alt="室内效果图2" class="gallery-img">
             <img src="xiaogt/ComfyUI_00256_.png" alt="室内效果图3" class="gallery-img">
             <img src="xiaogt/ComfyUI_00289_.png" alt="室内效果图4" class="gallery-img">
             <img src="xiaogt/ComfyUI_00306_.png" alt="室内效果图5" class="gallery-img">
             <img src="xiaogt/ComfyUI_00315_.png" alt="室内效果图6" class="gallery-img">
-            <!-- 更多图片可继续添加 -->
+            <img src="xiaogt/ComfyUI_00325_.png" alt="室内效果图7" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00328_.png" alt="室内效果图8" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00337_.png" alt="室内效果图9" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00342_.png" alt="室内效果图10" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00398_.png" alt="室内效果图11" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00401_.png" alt="室内效果图12" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00408_.png" alt="室内效果图13" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00413_.png" alt="室内效果图14" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00415_.png" alt="室内效果图15" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00419_.png" alt="室内效果图16" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00422_.png" alt="室内效果图17" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00425_.png" alt="室内效果图18" class="gallery-img">
         </div>
     </div>
 
