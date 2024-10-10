@@ -57,9 +57,10 @@
         .image-gallery {
             margin-top: 40px;
         }
+        /* 优化后的图片网格布局 */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 确保每列最小宽度为250px，自动适应屏幕宽度 */
             gap: 10px;
             padding: 10px;
         }
@@ -73,7 +74,6 @@
         .grid-container img:hover {
             transform: scale(1.05);
         }
-        /* Modal (弹窗) 样式 */
         .modal {
             display: none;
             position: fixed;
@@ -112,7 +112,8 @@
     <div class="content">
         <p>这里是分享最新的AI绘画工作流、资料，以及精美的AI创意作品的地方。我们将通过AIGC技术探索艺术创作的无限可能。</p>
         <p>请持续关注并加入我们的创作社区，获取独家会员内容和最新的AI绘画资讯！</p>
-        <a href="free_workflow_link" target="_blank">免费下载工作流</a>
+        <!-- 修正后的链接，采用相对路径 -->
+        <a href="./free_workflow/index.html" target="_blank">免费下载工作流</a>
         <a href="premium_content_link" target="_blank">会员专享内容</a>
     </div>
 
@@ -123,7 +124,10 @@
             <img src="xiaogt/ComfyUI_00236_.png" alt="室内效果图1" class="gallery-img">
             <img src="xiaogt/ComfyUI_00244_.png" alt="室内效果图2" class="gallery-img">
             <img src="xiaogt/ComfyUI_00256_.png" alt="室内效果图3" class="gallery-img">
-            <!-- 继续添加更多图片 -->
+            <img src="xiaogt/ComfyUI_00289_.png" alt="室内效果图4" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00306_.png" alt="室内效果图5" class="gallery-img">
+            <img src="xiaogt/ComfyUI_00315_.png" alt="室内效果图6" class="gallery-img">
+            <!-- 更多图片可继续添加 -->
         </div>
     </div>
 
