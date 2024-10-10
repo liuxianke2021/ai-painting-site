@@ -57,7 +57,6 @@
         .image-gallery {
             margin-top: 40px;
         }
-        /* 图片网格布局 */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -135,7 +134,7 @@
     <div class="image-gallery">
         <h2>AI绘画之室内效果图展示</h2>
         <div class="grid-container">
-            <!-- 展示18张室内效果图 -->
+            <!-- 18张室内效果图 -->
             <img src="xiaogt/ComfyUI_00236_.png" alt="室内效果图1" class="gallery-img">
             <img src="xiaogt/ComfyUI_00244_.png" alt="室内效果图2" class="gallery-img">
             <img src="xiaogt/ComfyUI_00256_.png" alt="室内效果图3" class="gallery-img">
@@ -161,7 +160,7 @@
     <div class="image-gallery">
         <h2>Ai-girls001</h2>
         <div class="grid-container">
-            <!-- 展示18张Ai-girls001图片 -->
+            <!-- 18张Ai-girls001图片 -->
             <img src="girls01/ComfyUI_00282_.png" alt="Ai-girls001 图片1" class="gallery-img">
             <img src="girls01/ComfyUI_00283_.png" alt="Ai-girls001 图片2" class="gallery-img">
             <img src="girls01/ComfyUI_00284_.png" alt="Ai-girls001 图片3" class="gallery-img">
@@ -199,6 +198,9 @@
     var modalImg = document.getElementById("imgModal");
     var closeBtn = document.getElementsByClassName("close")[0];
 
+    var currentScale = 1; // 初始化缩放比例
+    var isDragging = false, startX, startY;
+
     // 点击图片时打开弹窗
     var galleryImages = document.getElementsByClassName("gallery-img");
     for (var i = 0; i < galleryImages.length; i++) {
@@ -207,24 +209,25 @@
             modalImg.src = this.src;
             modalImg.style.maxHeight = "90%";
             modalImg.style.maxWidth = "90%";
+            resetModal(); // 打开新图片时重置
         }
     }
 
     // 关闭弹窗
     closeBtn.onclick = function() {
         modal.style.display = "none";
+        resetModal(); // 关闭时重置
     }
 
     // 添加鼠标滚轮缩放功能
     modalImg.addEventListener('wheel', function(e) {
         e.preventDefault();
-        let scale = 1 + (e.deltaY * -0.01);
-        modalImg.style.transform = `scale(${scale})`;
+        var scaleChange = e.deltaY * -0.01; // 根据滚轮移动计算缩放
+        currentScale = Math.min(Math.max(currentScale + scaleChange, 0.5), 3); // 限制缩放范围在 0.5x 到 3x 之间
+        modalImg.style.transform = `scale(${currentScale})`;
     });
 
     // 添加拖拽功能
-    let isDragging = false, startX, startY;
-
     modalImg.addEventListener('mousedown', function(e) {
         isDragging = true;
         startX = e.clientX - modalImg.offsetLeft;
@@ -243,6 +246,15 @@
         isDragging = false;
         modalImg.style.cursor = 'grab';
     });
+
+    // 重置弹窗图片大小和位置
+    function resetModal() {
+        currentScale = 1; // 重置缩放
+        modalImg.style.transform = `scale(1)`;
+        modalImg.style.left = "50%";
+        modalImg.style.top = "50%";
+        modalImg.style.cursor = 'grab';
+    }
 </script>
 
 </body>
