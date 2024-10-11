@@ -6,69 +6,84 @@
     <meta name="description" content="免费下载LiuSir的AI绘画工作流，帮助你快速上手AI创作。">
     <title>免费下载工作流 - LiuSir的AIGC/AI绘画频道</title>
     <link rel="stylesheet" href="../assets/style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-        main {
-            padding: 20px;
-            text-align: center;
-        }
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin: 0;
+    }
+
+    main {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .workflow-list {
+        display: grid;
+        grid-template-columns: 1fr; /* 在移动设备上单列显示 */
+        gap: 15px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
         .workflow-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 800px;
-            margin: 0 auto;
+            grid-template-columns: 1fr 1fr; /* 在较大屏幕上双列显示 */
         }
-        .workflow-item {
-            padding: 15px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-        .workflow-item h2 {
-            margin: 0;
-        }
-        .workflow-item p {
-            margin: 10px 0;
-        }
-        .download-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .download-btn:hover {
-            background-color: #45a049;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    }
+
+    .workflow-item {
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+    .workflow-item h2 {
+        margin: 0 0 10px;
+    }
+
+    .workflow-item p {
+        margin: 10px 0;
+    }
+
+    .download-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .download-btn:hover {
+        background-color: #45a049;
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        position: relative;
+        margin-top: 20px;
+    }
+</style>
 </head>
 <body>
 
